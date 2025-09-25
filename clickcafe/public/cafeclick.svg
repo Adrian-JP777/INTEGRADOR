@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="128" height="128">
+  <!-- Taza -->
+  <rect x="18" y="28" width="28" height="20" rx="4" ry="4" fill="#8B4513"></rect>
+  <rect x="22" y="32" width="20" height="12" rx="2" ry="2" fill="#ffffff"></rect>
+  
+  <!-- Asa de la taza -->
+  <path d="M46 32a6 6 0 1 1 0 12" stroke="#8B4513" stroke-width="4" fill="none"></path>
+  
+  <!-- Vapor -->
+  <path d="M28 22c0-4 6-4 6-8s-6-4-6-8" stroke="#ccc" stroke-width="2" fill="none" stroke-linecap="round"></path>
+  <path d="M36 22c0-4 6-4 6-8s-6-4-6-8" stroke="#ccc" stroke-width="2" fill="none" stroke-linecap="round"></path>
+  
+  <!-- Birrete -->
+  <polygon points="32,10 48,16 32,22 16,16" fill="#333"></polygon>
+  <rect x="28" y="16" width="8" height="4" fill="#333"></rect>
+  <line x1="48" y1="16" x2="52" y2="24" stroke="#FFD700" stroke-width="2"></line>
+  <circle cx="52" cy="24" r="2" fill="#FFD700"></circle>
+</svg>
