@@ -2,19 +2,19 @@ import { useState } from "react";
 import { Routes, Route, useLocation, Navigate } from "react-router-dom";
 
 // Componentes usuarios
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import CartDrawer from './components/CartDrawer';
-import HomePage from './pages/HomePage';
-import ProductsPage from './pages/ProductsPage';
-import AboutPage from './pages/AboutPage';
+import Navbar from '../shared/components/Navbar';
+import Footer from '../shared/components/Footer';
+import CartDrawer from '../features/cart/components/CartDrawer';
+import HomePage from '../features/home/pages/HomePage';
+import ProductsPage from '../features/catalog/pages/ProductsPage';
+import AboutPage from '../features/about/pages/AboutPage';
 
 // Componentes admin
-import AdminLayout from "./layouts/AdminLayout";
-import AdminHomePage from "./pages/admin/AdminHomePage";
-import AdminProductsPage from "./pages/admin/AdminProductsPage";
-import AdminPedidosPage from "./pages/admin/AdminPedidosPage";
-import AdminSalesPage from "./pages/admin/AdminSalesPage";
+import AdminLayout from "../features/admin/layouts/AdminLayout";
+import AdminHomePage from "../features/admin/pages/AdminHomePage";
+import AdminProductsPage from "../features/admin/pages/AdminProductsPage";
+import AdminPedidosPage from "../features/admin/pages/AdminPedidosPage";
+import AdminSalesPage from "../features/admin/pages/AdminSalesPage";
 
 export default function App() {
   const [openCart, setOpenCart] = useState(false);

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import Boton from "./ui/boton";
+import Boton from "../../../shared/components/ui/boton";
 
 export default function Hero() {
   const fondo = "/hero.jpg";

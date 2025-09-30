@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useMemo, useState } from "react";
-import { CATEGORIES, products } from "../data/products";
+import { CATEGORIES, products } from "../../../services/products";
 import ProductCard from "./ProductCard";
 
 export default function ProductTabs({ onAdd }) {
