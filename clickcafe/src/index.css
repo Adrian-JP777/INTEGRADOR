@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .boton-dorado { @apply bg-cafe-500 text-white rounded-full px-5 py-2 font-medium hover:opacity-90 transition; }
+  .titulo-seccion { @apply text-3xl md:text-4xl font-semibold text-cafe-900 text-center; }
+  .parrafo-suave { @apply text-cafe-900/70 leading-relaxed; }
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+}
