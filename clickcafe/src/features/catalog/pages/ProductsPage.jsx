@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { products } from "../data/products";
+import { products } from "../../../services/products";
 import ProductCard from "../components/ProductCard";
 import { motion, AnimatePresence } from "framer-motion";
 

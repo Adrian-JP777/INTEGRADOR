@@ -1,7 +1,7 @@
 // src/pages/HomePage.jsx
 import Hero from "../components/Hero";
-import ProductTabs from "../components/ProductTabs";
-import Promotions from "../components/Promotions"; // Nuevo componente
+import ProductTabs from "../../catalog/components/ProductTabs";
+import Promotions from "../../../shared/components/Promotions"; // Nuevo componente
 
 export default function HomePage({ onAdd }) {
   return (
