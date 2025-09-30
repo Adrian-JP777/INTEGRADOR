@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { products as initialProducts } from "../../../services/products";
+import { fallbackProducts as initialProducts } from "../../../services/products";
 
 export default function AdminProductsPage() {
     const [products, setProducts] = useState(initialProducts);

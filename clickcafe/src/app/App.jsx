@@ -16,25 +16,37 @@ import AdminProductsPage from "../features/admin/pages/AdminProductsPage";
 import AdminPedidosPage from "../features/admin/pages/AdminPedidosPage";
 import AdminSalesPage from "../features/admin/pages/AdminSalesPage";
 
+// Hooks
+import { useCart } from '../shared/hooks/useCart';
+
 export default function App() {
   const [openCart, setOpenCart] = useState(false);
-  const [cart, setCart] = useState([]);
   const [isAdmin, setIsAdmin] = useState(true);
   const location = useLocation();
   const isHome = location.pathname === '/';
+  
+  // Usar el hook personalizado del carrito
+  const {
+    cartItems,
+    addToCart: addToCartHook,
+    removeFromCart,
+    updateQuantity,
+    getCartItemsCount,
+    submitOrder,
+    isSubmitting
+  } = useCart();
 
-  const addToCart = (prod) => {
-    setCart((prev) => {
-      const exists = prev.find((p) => p.id === prod.id);
-      if (exists) return prev.map((p) => (p.id === prod.id ? { ...p, quantity: p.quantity + 1 } : p));
-      return [...prev, { ...prod, quantity: 1 }];
-    });
+  const addToCart = (product) => {
+    addToCartHook(product);
     setOpenCart(true);
   };
 
-  const removeFromCart = (id) => setCart((prev) => prev.filter((p) => p.id !== id));
-  const changeQuantity = (id, d) =>
-    setCart((prev) => prev.map((p) => (p.id === id ? { ...p, quantity: Math.max(1, p.quantity + d) } : p)));
+  const changeQuantity = (id, delta) => {
+    const item = cartItems.find(item => item.id === id);
+    if (item) {
+      updateQuantity(id, item.quantity + delta);
+    }
+  };
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
@@ -42,7 +54,7 @@ export default function App() {
         <Navbar
           overlay={isHome}
           onOpenCart={() => setOpenCart(true)}
-          count={cart.reduce((a, b) => a + b.quantity, 0)}
+          count={getCartItemsCount()}
         />
       )}
 
@@ -72,9 +84,11 @@ export default function App() {
       <CartDrawer
         open={openCart}
         onClose={() => setOpenCart(false)}
-        cart={cart}
+        cart={cartItems}
         remove={removeFromCart}
         changeQuantity={changeQuantity}
+        onSubmitOrder={submitOrder}
+        isSubmitting={isSubmitting}
       />
     </div>
   );
